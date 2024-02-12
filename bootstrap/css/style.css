@@ -92,7 +92,8 @@ body {
     color: white;
 }
 .bg_blue{
-    background-color: rgb(1, 170, 170);
+    background: linear-gradient(180deg, #151616 0%, #0a0a27 50%, #000021 100%); 
+   
 }
 .bg_grey{
     background-color: #a3a3a3;
