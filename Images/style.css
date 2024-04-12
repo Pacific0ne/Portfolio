@@ -1,0 +1,116 @@
+﻿body {
+    font-size: smaller;
+}
+
+.dropdown-menu {
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    /*border-inline-start: 5px solid #000046;*/
+    padding: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .23);
+    overflow: hidden;
+}
+
+    .dropdown-menu li a {
+        padding-left: 0.25rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        padding-right: 0.5rem
+    }
+
+        .dropdown-menu li a:hover {
+            color: #1cb5e0;
+        }
+
+    .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px; /* Adjust the width as needed for your thin strip */
+        height: 100%; /* Full height of the card */
+        background: linear-gradient(180deg,#000046,#1cb5e0);
+    }
+
+.nav-bg {
+    background: linear-gradient(119.54deg,#000046, #1cb5e0);
+}
+
+.text-white {
+    color: white;
+}
+
+.text-comp-blue {
+    color: #000046;
+}
+
+.text-comp-lblue {
+    color: #1cb5e0;
+}
+
+.icon-grad {
+    color: #002285;
+}
+
+.border-blue {
+    background-color: white;
+    border-bottom: 2px solid #000046;
+}
+
+.borderend-blue {
+    background-color: white;
+    border-right: 2px solid #000046;
+}
+
+.modal-brdr {
+    border-radius: 5px;
+    border-top: 5px solid #000046;
+}
+
+.footer-col {
+    background-color: #000046;
+}
+
+.card-u-border{
+    position: relative;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+    .card-u-border::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; /* Adjust the width as needed for your thin strip */
+        height: 5px; /* Full height of the card */
+        background: linear-gradient(90deg,#000046,#1cb5e0);
+    }
+
+    .card-u-border:hover {
+        box-shadow: 0px 5px 5px grey;
+    }
+
+
+
+@media screen and (min-width:992px) {
+    /*.dropdown-menu.show{
+                display:flex;
+            }*/
+    /*.dropdown:hover a{
+                color: orangered;
+            }*/
+    .dropdown:hover .dropdown-menu {
+        display: flex;
+    }
+}
+/* Media query for screens less than 360px */
+@media (max-width: 360px) {
+    .dropdown-menu.show {
+        display: flex;
+        max-height: 30vh;
+        overflow: scroll;
+    }
+}
