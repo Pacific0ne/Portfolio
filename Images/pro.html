@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Test Page</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--bootstrap css-->
+    <link href="dataTables/dataTables.min.css" rel="stylesheet" />
+    <!--datatable css-->
+    <!--<link href="Fontawesome/css/all.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--fontawesome css-->
+    <link href="typicons/typicons.css" rel="stylesheet" />
+    
+    <link href="bootstrap/css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="container-fluid nav-bg">
+                <nav class="navbar navbar-expand-lg d-flex">
+                    <div class="navbar-brand justify-content-center d-none d-sm-flex">
+                        <h5 class="m-2" style="color: #ffac01">Project Pacific</h5>
+                    </div>
+                    <div class="navbar-brand justify-content-center d-flex ms-2">
+                        <a class="nav-profile" style="padding: 4px;" href="#">
+                            <img src="logo/images.png" style="width: 40px; height: 40px;" class="img-responsive rounded" /></a>
+                        <Label class="m-auto text-white mt-2" ID="lblname">Prashant Shekhar</Label>
+                    </div>
+                    <div class="navbar-item justify-content-end d-none d-sm-flex ms-auto">
+                        <ul class="nav nav-fill">
+                            <li class="nav-item " title="date">
+                                <h6 class="pt-2 text-white">
+                                    <Label ID="Time">Time</Label></h6>
+                            </li>
+                            <li class="nav-item" title="About">
+                                <a class="nav-link m-auto" href="#"><i class="fa-solid fa-circle-info fa-lg text-white"></i></a>
+                            </li>
+                            <li class="nav-item" title="Change Password">
+                                <a class="nav-link m-auto" href="#"><i class="fa-solid fa-gear fa-lg text-white"></i></a>
+                            </li>
+                            <li class="nav-item" title="Logout">
+                                <a class="nav-link m-auto" href="#"><i class="fa-solid fa-right-from-bracket fa-lg text-white"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="navbar-nav justify-content-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navitem" aria-controls="navitem" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+                            </li>
+                        </ul>
+                    </div> -->
+                </nav>
+            </div>
+        </header>
+
+    <!--<nav class="navbar navbar-expand-lg border-blue">
+            <div class="offcanvas offcanvas-end w-auto" id="navitem" aria-labelledby="navitemlabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Project Pacific</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body justify-content-center">
+                    <ul class="navbar-nav d-inline-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-house icon-grad"></i>
+                                <span class="menu-title icon-grad">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown icon-grad">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="admn" href="#" aria-expanded="false" aria-controls="admn" aria-haspopup="true">
+                                <i class="fa-solid fa-user icon-grad"></i>
+                                <span class="menu-title  icon-grad">Admin</span></a>
+                            <div class="dropdown-menu" aria-labelledby="admn">
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="department.aspx">Department</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="course.aspx">Course</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="branch.aspx">Branch</a></li>
+                                </ul>
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="session.aspx">Session</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="semester.aspx">Semester</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="subject.aspx">Subject</a></li>
+                                </ul>
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="financial-year.aspx">Financial year</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="user.aspx">User</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="role.aspx">Role</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="emp" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="emp">
+                                <i class="fa-solid fa-users-gear"></i>
+                                <span class="menu-title">Employee</span></a>
+                            <div class="dropdown-menu" aria-labelledby="emp">
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Enroll</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Engagement</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Attendance</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="accnts" aria-expanded="false" aria-controls="accnts" aria-haspopup="true">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                <span class="menu-title">Accounts</span><i class="menu-arrow"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="accnts">
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Student Details</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Employee Details</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Fee Deposits</a></li>
+                                </ul>
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="#">College Expenses</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Fee Structure</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Bank Accounts</a></li>
+                                </ul>
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Transactions</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Journal Entry</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-graduation-cap"></i>
+                                <span class="menu-title">CSE</span></a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="apply" href="#" aria-expanded="false" aria-haspopup="true" aria-controls="apply">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span class="menu-title">Notice/Application</span></a>
+                            <div class="dropdown-menu" aria-labelledby="apply">
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Notice</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Applications</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="tpcell" href="#" aria-expanded="false" aria-haspopup="true" aria-controls="tpcell">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                <span class="menu-title">T&P Cell</span></a>
+                            <div class="dropdown-menu" aria-labelledby="tpcell">
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="tnp_companies.aspx">Companies</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Engagement</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Enrollments</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="cult" href="#" aria-expanded="false" aria-haspopup="true" aria-controls="cult">
+                                <i class="fa-solid fa-calendar-day"></i>
+                                <span class="menu-title">Cultural</span></a>
+                            <div class="dropdown-menu" aria-labelledby="cult">
+                                <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Event</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Members</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="#">Participants</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="view_application.aspx">
+                            <i class="typcn typcn-document-text menu-icon"></i>
+                            <span class="menu-title">Documents</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+
+        <div class="container-fluid page-body-wrapper">
+            <div class="row">
+                <div class="col-md-2 borderend-blue">
+                    <nav class="col-md-3 col-lg-2 d-md-block sidebar ">
+                        <div class="position-sticky">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="btn dropdown-toggle" href="#"><i class="fa-solid fa-house icon-grad"></i>
+                                        <span class="menu-title icon-grad">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="btn dropdown-toggle" data-bs-toggle="dropdown" id="admn" href="#" aria-expanded="false" aria-controls="admn" aria-haspopup="true">
+                                        <i class="fa-solid fa-user icon-grad"></i>
+                                        <span class="menu-title icon-grad">Admin</span></a>
+                                    <div class="dropdown-menu" aria-labelledby="admn">
+                                        <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                            <li class="nav-item"><a class="dropdown-item" href="department.aspx">Department</a></li>
+                                            <li class="nav-item"><a class="dropdown-item" href="course.aspx">Course</a></li>
+                                            <li class="nav-item"><a class="dropdown-item" href="branch.aspx">Branch</a></li>
+                                        </ul>
+                                        <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                            <li class="nav-item"><a class="dropdown-item" href="session.aspx">Session</a></li>
+                                            <li class="nav-item"><a class="dropdown-item" href="semester.aspx">Semester</a></li>
+                                            <li class="nav-item"><a class="dropdown-item" href="subject.aspx">Subject</a></li>
+                                        </ul>
+                                        <ul class="nav" style="flex-direction: column; text-decoration: none;">
+                                            <li class="nav-item"><a class="dropdown-item" href="financial-year.aspx">Financial year</a></li>
+                                            <li class="nav-item"><a class="dropdown-item" href="user.aspx">User</a></li>
+                                            <li class="nav-item"><a class="dropdown-item" href="role.aspx">Role</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-10">
+                    <div class="main-panel">
+                        <div class="content-wrapper align-content-sm-stretch">
+                            
+                            <h1 class="text-center" style="margin:auto">Main Panel</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <footer class="footer footer-col">
+            <div class="card card-body footer-col">
+                <div class="d-flex justify-content-between">
+                    <span class="text-white d-inline-block" style="font-family: Arial; font-size: 0.5rem; font-weight: normal; font-style: normal;">Copyright © 2023 | Developed &amp; Design By :- Prashant Shekhar | All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <!--javascript-->
+    <script src="bootstrap/js/jquery-3.5.1.min.js"></script>
+    <!--<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="dataTables/dataTables.min.js"></script>
+</body>
+</html>
